@@ -1,0 +1,18 @@
+[
+  {
+      "word": "risau",
+      "verdict": ["hijau", "kuning", "abu-abu", "kuning", "abu-abu"]
+  },
+  {
+      "word": "rajin",
+      "verdict": ["hijau", "hijau", "abu-abu", "hijau", "abu-abu"]
+  },
+  {
+      "word": "rakit",
+      "verdict": ["hijau", "hijau", "abu-abu", "hijau", "abu-abu"]
+  },
+  {
+      "word": "rapih",
+      "verdict": ["hijau", "hijau", "abu-abu", "hijau", "kuning"]
+  }
+]
