@@ -1,6 +1,3 @@
--anda
--wati
--wiah
 abadi
 abaka
 abang
@@ -113,7 +110,6 @@ ambeg
 ambek
 amben
 ambet
-ambi-
 ambil
 ambin
 amboi
@@ -121,7 +117,6 @@ ambuh
 ambul
 ambur
 ameba
-amfi-
 amien
 amina
 amino
@@ -198,11 +193,10 @@ antah
 antan
 antap
 antar
-ante-
+antar
 antek
 antem
 antep
-anti-
 antih
 antik
 antoi
@@ -274,7 +268,6 @@ asong
 aspal
 aspek
 asrar
-asta-
 aster
 asung
 aswad
@@ -294,7 +287,6 @@ aural
 aurat
 aurum
 autad
-auto-
 avgas
 avtur
 awang
@@ -576,6 +568,7 @@ benta
 benua
 benum
 benur
+beran
 berai
 berak
 beram
@@ -923,6 +916,7 @@ catek
 catet
 catuk
 catur
+catur
 catut
 caung
 cawai
@@ -1227,7 +1221,6 @@ darji
 darma
 darun
 darus
-dasa-
 dasar
 dasin
 dasun
@@ -1294,7 +1287,6 @@ degum
 degup
 deham
 dehem
-deka-
 dekah
 dekak
 dekam
@@ -1511,7 +1503,6 @@ ekses
 eksim
 eksin
 eksit
-ekso-
 ekspo
 elang
 elegi
@@ -1662,6 +1653,7 @@ fatur
 fatwa
 fauna
 felon
+femto
 fenit
 fenol
 feral
@@ -1936,7 +1928,6 @@ getun
 gibah
 gibas
 gidik
-giga-
 gigih
 gigil
 gigir
@@ -2147,14 +2138,16 @@ heban
 hebat
 heboh
 heiho
+heksa
+hekto
 helah
 helai
 helat
 hemat
-hemi-
 henry
 henti
 hepar
+hepta
 heran
 herba
 hertz
@@ -2164,6 +2157,7 @@ hibat
 hibob
 hibuk
 hibur
+hidro
 hidup
 hiena
 hijab
@@ -2179,7 +2173,7 @@ himne
 hinap
 hindi
 hindu
-hipo-
+hiper
 hipui
 hirap
 hirau
@@ -2190,7 +2184,6 @@ hisap
 hitam
 hodah
 hokah
-homo-
 honae
 honji
 honor
@@ -2288,6 +2281,7 @@ indik
 indra
 induk
 infak
+infra
 infus
 ingar
 ingat
@@ -2307,9 +2301,12 @@ inset
 intai
 intan
 intel
+inter
 intil
 intim
 intip
+intra
+intro
 intro
 inyik
 inzar
@@ -2741,7 +2738,6 @@ kasur
 kasus
 kasut
 kaswi
-kata-
 katah
 katai
 katak
@@ -3226,6 +3222,7 @@ kuark
 kuart
 kuasa
 kuasi
+kuasi
 kuaya
 kubah
 kubak
@@ -3666,7 +3663,6 @@ letus
 leuca
 level
 lever
-levo-
 lewah
 lewar
 lewat
@@ -3879,7 +3875,6 @@ magik
 magis
 magma
 magun
-maha-
 mahah
 mahal
 mahar
@@ -3905,10 +3900,10 @@ maket
 makin
 makna
 makro
+makro
 maksi
 makua
 makul
-mala-
 malah
 malai
 malak
@@ -4013,7 +4008,6 @@ medis
 medit
 medok
 meduk
-mega-
 megah
 megak
 megan
@@ -4042,14 +4036,13 @@ menak
 menat
 mendu
 menep
-meng-
+menge
 mengi
 menir
 menit
 menor
 menta
 menur
-meny-
 meong
 mepet
 merah
@@ -4072,7 +4065,6 @@ mesem
 mesin
 mesiu
 meski
-meso-
 meson
 mesra
 mesta
@@ -4080,7 +4072,6 @@ mesti
 mesui
 mesum
 mesut
-meta-
 metah
 metai
 metal
@@ -4097,8 +4088,8 @@ mihun
 mijil
 mikat
 mikro
+mikro
 milad
-mili-
 milik
 milir
 mimik
@@ -4106,7 +4097,6 @@ mimis
 mimpi
 minat
 mindi
-mini-
 minim
 minor
 minta
@@ -4158,7 +4148,6 @@ molos
 momen
 momok
 monel
-mono-
 mopit
 morak
 moral
@@ -4192,6 +4181,7 @@ mulat
 mules
 mulia
 mulsa
+multi
 muluk
 mulur
 mulus
@@ -4514,6 +4504,7 @@ panai
 panar
 panas
 panau
+panca
 panci
 panco
 pandu
@@ -4534,7 +4525,6 @@ papar
 papas
 papat
 papui
-para-
 parab
 paraf
 parah
@@ -4545,7 +4535,6 @@ parap
 paras
 parau
 parga
-pari-
 paria
 parih
 parik
@@ -4565,6 +4554,7 @@ pasak
 pasal
 pasar
 pasat
+pasca
 paser
 paset
 pasif
@@ -4651,6 +4641,7 @@ pekis
 peksi
 pekuk
 pekur
+pelan
 pelah
 pelak
 pelan
@@ -4670,17 +4661,18 @@ pelor
 peluh
 peluk
 pelus
+peman
 pemeo
 penak
 penat
 pencu
 penda
 penes
-peng-
+penge
 penis
 pensi
+penta
 penuh
-peny-
 penyu
 pepah
 pepak
@@ -4690,6 +4682,7 @@ pepek
 peper
 pepes
 pepet
+peran
 perah
 perai
 perak
@@ -4765,6 +4758,7 @@ picik
 picis
 picit
 pidit
+piezo
 pigmi
 pihak
 pijah
@@ -4778,7 +4772,6 @@ pikat
 pikau
 piket
 pikir
-piko-
 pikul
 pikun
 pikup
@@ -4862,7 +4855,6 @@ polen
 poler
 poles
 polet
-poli-
 polio
 polip
 polis
@@ -4893,11 +4885,13 @@ praba
 prabu
 prada
 praja
+pramu
 prasi
 premi
 prima
 prive
 prosa
+proto
 psalm
 psike
 puaka
@@ -4959,6 +4953,7 @@ puput
 purba
 purik
 puris
+purna
 puruk
 purun
 purus
@@ -5243,6 +5238,7 @@ retek
 retet
 retih
 retok
+retro
 retur
 retus
 reuni
@@ -5652,7 +5648,6 @@ seman
 semat
 semek
 semen
-semi-
 semir
 semok
 semua
@@ -5703,6 +5698,7 @@ seran
 serap
 serat
 serau
+serba
 serba
 serbi
 serbu
@@ -5918,6 +5914,7 @@ sorga
 sorog
 sorok
 sorot
+sosio
 sosis
 sosoh
 sosok
@@ -6014,8 +6011,10 @@ sunyi
 supai
 supel
 super
+super
 supir
 supit
+supra
 surah
 surai
 suram
@@ -6271,7 +6270,6 @@ telap
 telas
 telat
 telau
-tele-
 teler
 teles
 telik
@@ -6320,7 +6318,6 @@ tepok
 tepos
 tepuk
 tepus
-tera-
 terak
 teral
 teram
@@ -6477,6 +6474,7 @@ toyor
 trafo
 trama
 trans
+trans
 trema
 trica
 triko
@@ -6532,7 +6530,6 @@ tumit
 tumor
 tumpu
 tumus
-tuna-
 tunai
 tunak
 tunam
@@ -6580,6 +6577,7 @@ uktab
 ulama
 ulang
 uling
+ultra
 ulung
 umara
 umbai

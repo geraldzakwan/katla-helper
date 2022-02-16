@@ -1,6 +1,7 @@
-import time
 import pickle
 import requests
+import string
+import time
 from bs4 import BeautifulSoup
 from datetime import date
 
@@ -21,6 +22,8 @@ def main():
             for idx, a in enumerate(parsed_html.find_all("a", href=True)):
                 if "arti-kata" in a["href"]:
                     word = a["href"].split("/")[-1]
+                    word = word.translate(
+                        str.maketrans('', '', string.punctuation))
 
                     if len(word) == 5:
                         five_letter_words.append(word)
