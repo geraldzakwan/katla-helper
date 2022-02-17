@@ -1,6 +1,4 @@
 import json
-import string
-import time
 from enum import Enum
 
 
@@ -34,6 +32,7 @@ class Candidate:
         # Based on the state so far, set the constraints.
         self.set_constraints()
 
+    # This is to create a data structure that can help validify a guess
     def set_constraints(self):
         # Each element will contain a character which has been guessed
         # correctly for the corresponding position (if not yet guessed,
@@ -81,7 +80,8 @@ class Candidate:
                         .format(Verdict.HIJAU.value, Verdict.KUNING.value,
                                 Verdict.ABU.value))
 
-    def verify(self, word):
+    # This is the main function that serves the main purpose of the class
+    def validify(self, word):
         if len(word) > 5:
             return False
 
@@ -109,25 +109,25 @@ class Candidate:
 
 
 if __name__ == '__main__':
-    with open("solver/state_example.json", "r") as infile:
-        state = json.load(infile)
+    with open("solver/states_example.json", "r") as infile:
+        states = json.load(infile)
 
-    candidate = Candidate(state)
+    candidate = Candidate(states)
 
     # All the historical guesses should fail.
-    assert candidate.verify("risau") == False
-    assert candidate.verify("rajin") == False
-    assert candidate.verify("rakit") == False
-    assert candidate.verify("rapih") == False
+    assert candidate.validify("risau") == False
+    assert candidate.validify("rajin") == False
+    assert candidate.validify("rakit") == False
+    assert candidate.validify("rapih") == False
 
     # These words don't exist in KBBI but let's just use them to test
-    # if our verify function and our constraints are solid.
+    # if our validify function and our constraints are solid.
 
     # This should fail as "H" can't be the last character.
-    assert candidate.verify("ramih") == False
+    assert candidate.validify("ramih") == False
 
     # This should succeed as "H" is correctly placed and "B" is not yet used.
-    assert candidate.verify("rahib") == True
+    assert candidate.validify("rahib") == True
 
     # The correct answer should succeed.
-    assert candidate.verify("rahim") == True
+    assert candidate.validify("rahim") == True
