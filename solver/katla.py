@@ -1,5 +1,6 @@
 import json
 import random
+from candidate import Candidate
 
 
 class Katla:
@@ -58,7 +59,30 @@ class Katla:
         # Let's pick 5 at random since the total possibilites is around 70
         return random.sample(starters, 5)
 
+    # This is to give good suggestions on second to sixth guess
+    # TO DO: SHOULD be refined with a better logic
+    def get_guesses(self, states):
+        candidate = Candidate(states)
+        guesses = []
+
+        for word in self.word_dict:
+            # Add as suggestion if it's a valid word that complies with
+            # all hints in the so far states
+            if candidate.validify(word):
+                guesses.append(word)
+
+        # Let's pick 5 at random if total possibilites is more than 5
+        if len(guesses) > 5:
+            guesses = random.sample(guesses, 5)
+
+        return guesses
+
 
 if __name__ == '__main__':
     katla = Katla()
     print(katla.get_starters())
+
+    with open("solver/states_example.json", "r") as infile:
+        states = json.load(infile)
+
+    print(katla.get_guesses(states))
