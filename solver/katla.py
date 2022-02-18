@@ -1,6 +1,7 @@
 import json
 import random
-from candidate import Candidate
+import string
+from solver.candidate import Candidate
 
 
 class Katla:
@@ -17,6 +18,11 @@ class Katla:
         self.important_consonants = set([])
         for char in config["important_consonants"]:
             self.important_consonants.add(char)
+
+    @staticmethod
+    def clean(word):
+        return word.lower().translate(str.maketrans('', '',
+                                                    string.punctuation))
 
     @staticmethod
     def count_vocals(word):
@@ -38,6 +44,12 @@ class Katla:
                 num_distinct_consonants += 1
 
         return num_distinct_consonants
+
+    def is_kbbi_word(self, word):
+        if word in self.word_dict:
+            return True
+
+        return False
 
     # This is to give good suggestions on word starter
     # TO DO: Can be refined with a better logic

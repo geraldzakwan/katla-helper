@@ -15,7 +15,7 @@ class Verdict(Enum):
 # The purpose of this class is to verify if a guess is valid based on the state
 class Candidate:
 
-    def __init__(self, states=""):
+    def __init__(self, states=[]):
         # Katla gives us 6 guesses so states will only contain 5 guesses max.
         # We don't need to save the 6th guess in the state since the purpose of
         # states is to give context for the next guess (which is inexistent
