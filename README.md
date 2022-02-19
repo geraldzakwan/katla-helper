@@ -5,14 +5,16 @@ by giving you 5 suggestions for each guess.
 
 # How to Run
 
+- If not already, install `Python 3`: https://www.python.org/downloads/
+
 - Clone the repository
 
-  `git clone https://github.com/geraldzakwan/katla-helper.git` OR `git clone git@github.com:geraldzakwan/katla-helper.git`
+  - HTTPS: `git clone https://github.com/geraldzakwan/katla-helper.git`
+  - SSH: `git clone git@github.com:geraldzakwan/katla-helper.git`
 
 - Install all requirements
 
-  `cd katla-helper`
-  `pip install -r requirements.txt`
+  `cd katla-helper` and then `pip install -r requirements.txt`
 
 - Run the CLI app
 
