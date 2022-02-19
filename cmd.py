@@ -49,7 +49,37 @@ def main():
             )
             print_dashes(75)
 
-        verdict = input("Petunjuk Katla untuk tebakan \"{}\": ".format(guess))
+        is_verdict_valid = False
+
+        while not is_verdict_valid:
+            verdict = clean(
+                input("Petunjuk Katla untuk tebakan \"{}\": ".format(
+                    guess))).lower()
+
+            if len(verdict) == 5:
+                allowed_chars = 0
+
+                for i in range(0, 5):
+                    if verdict[i] in ('a', 'k', 'h'):
+                        allowed_chars += 1
+
+                if allowed_chars == 5:
+                    is_verdict_valid = True
+                else:
+                    print(
+                        "Petunjuk hanya boleh mengandung huruf 'a', 'k' dan 'h'"
+                    )
+                    print(
+                        "Sebagai contoh, ketik \"hakah\" jika warnanya [hijau, abu-abu, kuning, abu-abu, hijau]"
+                    )
+                    print_dashes(50)
+            else:
+                print("Petunjuk harus punya lima huruf, harap ulangi ya!")
+                print(
+                    "Sebagai contoh, ketik \"hakah\" jika warnanya [hijau, abu-abu, kuning, abu-abu, hijau]"
+                )
+                print_dashes(50)
+
         print_dashes(50)
 
         if verdict == "hhhhh":
