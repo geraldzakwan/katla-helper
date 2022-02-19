@@ -1,9 +1,6 @@
 import json
+from solver.utils import clean, print_dashes
 from solver.katla import Katla
-
-
-def print_dashes(n):
-    print("-" * n)
 
 
 def main():
@@ -26,7 +23,7 @@ def main():
         is_guess_valid = False
 
         while not is_guess_valid:
-            guess = Katla.clean(
+            guess = clean(
                 input("Ketik kata yang ingin kamu masukkan ke Katla: "))
 
             if len(guess) == 5:

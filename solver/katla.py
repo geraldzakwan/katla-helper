@@ -1,6 +1,6 @@
 import json
 import random
-import string
+from solver.utils import count_vocals, count_distinct_consonants
 from solver.candidate import Candidate
 
 
@@ -19,32 +19,6 @@ class Katla:
         for char in config["important_consonants"]:
             self.important_consonants.add(char)
 
-    @staticmethod
-    def clean(word):
-        return word.lower().translate(str.maketrans('', '',
-                                                    string.punctuation))
-
-    @staticmethod
-    def count_vocals(word):
-        vocals = set(["a", "i", "u", "e", "o"])
-        num_vocals = 0
-
-        for char in vocals:
-            if char in word:
-                num_vocals += 1
-
-        return num_vocals
-
-    @staticmethod
-    def count_distinct_consonants(word, consonants):
-        num_distinct_consonants = 0
-
-        for char in consonants:
-            if char in word:
-                num_distinct_consonants += 1
-
-        return num_distinct_consonants
-
     def is_kbbi_word(self, word):
         if word in self.word_dict:
             return True
@@ -59,8 +33,8 @@ class Katla:
         for word in self.word_dict:
             # Exclude word that has repeatable character(s)
             if len(set(word)) == len(word):
-                num_vocals = Katla.count_vocals(word)
-                num_distinct_consonants = Katla.count_distinct_consonants(
+                num_vocals = count_vocals(word)
+                num_distinct_consonants = count_distinct_consonants(
                     word, self.important_consonants)
 
                 # Add as suggestion if it has more than 2 vocals and
@@ -88,13 +62,3 @@ class Katla:
             guesses = random.sample(guesses, 5)
 
         return guesses
-
-
-if __name__ == '__main__':
-    katla = Katla()
-    print(katla.get_starters())
-
-    with open("solver/states_example.json", "r") as infile:
-        states = json.load(infile)
-
-    print(katla.get_guesses(states))
