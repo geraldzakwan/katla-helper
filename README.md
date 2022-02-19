@@ -1,20 +1,19 @@
 # Katla Helper
 
-A web app (currently just the backend/API) that can help you solve Katla game
-(https://katla.vercel.app/) by giving 5 suggestions for each step.
+A command line program that can help you solve Katla game (https://katla.vercel.app/)
+by giving you 5 suggestions for each guess.
 
 # How to Run
 
+- Clone the repository
+
+  `git clone https://github.com/geraldzakwan/katla-helper.git` OR `git clone git@github.com:geraldzakwan/katla-helper.git`
+
 - Install all requirements
 
+  `cd katla-helper`
   `pip install -r requirements.txt`
 
-- Run the web app
+- Run the CLI app
 
-  `python3 app.py`
-
-# How to use API
-
-- Example Request using POST JSON
-
-TBD
+  `python3 cmd.py`
