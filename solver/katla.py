@@ -1,6 +1,6 @@
 import json
 import random
-from solver.utils import count_vocals, count_distinct_consonants
+from solver.utils import count_vocals, count_distinct_consonants, read_dictionary
 from solver.candidate import Candidate
 
 
@@ -10,17 +10,22 @@ class Katla:
         with open("solver/config.json", "r") as infile:
             config = json.load(infile)
 
-        self.word_dict = []
-        with open(config["dictionary_filepath"], "r") as infile:
-            for word in infile.readlines():
-                self.word_dict.append(word.strip("\n"))
-
         self.important_consonants = set([])
         for char in config["important_consonants"]:
             self.important_consonants.add(char)
 
+        self.katla_dict = read_dictionary(config["katla_dict_filepath"])
+
+        self.word_dict = read_dictionary(config["word_dict_filepath"])
+
     def is_kbbi_word(self, word):
         if word in self.word_dict:
+            return True
+
+        return False
+
+    def is_used_previously(self, word):
+        if word in self.katla_dict:
             return True
 
         return False
@@ -31,16 +36,18 @@ class Katla:
         starters = []
 
         for word in self.word_dict:
-            # Exclude word that has repeatable character(s)
-            if len(set(word)) == len(word):
-                num_vocals = count_vocals(word)
-                num_distinct_consonants = count_distinct_consonants(
-                    word, self.important_consonants)
+            # Exclude word that has been used
+            if not self.is_used_previously(word):
+                # Exclude word that has repeatable character(s)
+                if len(set(word)) == len(word):
+                    num_vocals = count_vocals(word)
+                    num_distinct_consonants = count_distinct_consonants(
+                        word, self.important_consonants)
 
-                # Add as suggestion if it has more than 2 vocals and
-                # it has more than 1 important/frequent consonants
-                if num_vocals > 2 and num_distinct_consonants > 1:
-                    starters.append(word)
+                    # Add as suggestion if it has more than 2 vocals and
+                    # it has more than 1 important/frequent consonants
+                    if num_vocals > 2 and num_distinct_consonants > 1:
+                        starters.append(word)
 
         # Let's pick 5 at random since the total possibilites is around 70
         return random.sample(starters, 5)
@@ -52,10 +59,12 @@ class Katla:
         guesses = []
 
         for word in self.word_dict:
-            # Add as suggestion if it's a valid word that complies with
-            # all hints in the so far states
-            if candidate.validify(word):
-                guesses.append(word)
+            # Exclude word that has been used
+            if not self.is_used_previously(word):
+                # Add as suggestion if it's a valid word that complies with
+                # all hints in the so far states
+                if candidate.validify(word):
+                    guesses.append(word)
 
         # Let's pick 5 at random if total possibilites is more than 5
         if len(guesses) > 5:

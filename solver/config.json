@@ -1,4 +1,5 @@
 {
-  "dictionary_filepath": "dictionary/katla/2022-02-19.txt",
-  "important_consonants": "bnprst"
+  "important_consonants": "bnprst",
+  "katla_dict_filepath": "dictionary/katla/used_words.txt",
+  "word_dict_filepath": "dictionary/katla/2022-02-19.txt"
 }

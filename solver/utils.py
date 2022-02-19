@@ -28,3 +28,13 @@ def count_distinct_consonants(word, consonants):
 
 def print_dashes(n):
     print("-" * n)
+
+
+def read_dictionary(filepath):
+    word_dict = []
+
+    with open(filepath, "r") as infile:
+        for word in infile.readlines():
+            word_dict.append(word.strip("\n"))
+
+    return word_dict
