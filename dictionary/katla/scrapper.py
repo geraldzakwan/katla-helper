@@ -32,7 +32,7 @@ def main():
             print("Time elapsed: {} seconds".format(time.time() - start_time))
 
     # Add date suffix in the filepath to version the dictionary
-    with open("dictionary/five_letter_words_{}.txt".format(str(date.today())),
+    with open("dictionary/katla/{}.txt".format(str(date.today())),
               "w") as outfile:
         for word in five_letter_words:
             outfile.write(word + "\n")
