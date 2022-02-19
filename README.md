@@ -5,7 +5,12 @@ by giving you 5 suggestions for each guess.
 
 # How to Run
 
-- If not already, install `Python 3`: https://www.python.org/downloads/
+- If not already, install:
+
+  - `Python 3`: https://www.python.org/downloads/
+  - `Git`: https://git-scm.com/downloads
+
+- Open your Windows/MacOS/Linux terminal
 
 - Clone the repository
 
@@ -14,7 +19,8 @@ by giving you 5 suggestions for each guess.
 
 - Install all requirements
 
-  `cd katla-helper` and then `pip install -r requirements.txt`
+  - `cd katla-helper`
+  - `pip install -r requirements.txt`
 
 - Run the CLI app
 
