@@ -28,3 +28,5 @@ beruk
 porsi
 uapan
 sabtu
+polan
+parau
