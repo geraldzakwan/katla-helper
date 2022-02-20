@@ -11,13 +11,10 @@ class Katla:
         with open("solver/config.json", "r") as infile:
             config = json.load(infile)
 
-        self.important_consonants = set([])
-        for char in config["important_consonants"]:
-            self.important_consonants.add(char)
-
         self.katla_dict = read_dictionary(config["katla_dict_filepath"])
-
         self.word_dict = read_dictionary(config["word_dict_filepath"])
+
+        self.set_important_consonants(config["num_important_consonants"])
 
     def is_kbbi_word(self, word):
         if word in self.word_dict:
@@ -30,6 +27,22 @@ class Katla:
             return True
 
         return False
+
+    # Important consonants are derived from all Katla words so far
+    # TO DO: Can be refined with a better logic
+    def set_important_consonants(self, num_important_consonants):
+        vocals = set(["a", "i", "u", "e", "o"])
+        letters = ""
+
+        for word in self.katla_dict:
+            for letter in word:
+                if not letter in vocals:
+                    letters += letter
+
+        self.important_consonants = set([])
+
+        for tup in Counter(letters).most_common(num_important_consonants):
+            self.important_consonants.add(tup[0])
 
     # This is to give good suggestions on word starter
     # TO DO: Can be refined with a better logic

@@ -1,5 +1,5 @@
 {
-  "important_consonants": "bnprst",
   "katla_dict_filepath": "dictionary/katla/used_words.txt",
-  "word_dict_filepath": "dictionary/katla/2022-02-19.txt"
+  "word_dict_filepath": "dictionary/katla/2022-02-19.txt",
+  "num_important_consonants": 5
 }
