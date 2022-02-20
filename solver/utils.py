@@ -6,10 +6,9 @@ def clean(word):
 
 
 def count_vocals(word):
-    vocals = set(["a", "i", "u", "e", "o"])
     num_vocals = 0
 
-    for char in vocals:
+    for char in ("a", "i", "u", "e", "o"):
         if char in word:
             num_vocals += 1
 
