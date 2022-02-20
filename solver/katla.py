@@ -14,6 +14,7 @@ class Katla:
         self.katla_dict = read_dictionary(config["katla_dict_filepath"])
         self.word_dict = read_dictionary(config["word_dict_filepath"])
 
+        self.num_suggestions = config["num_suggestions"]
         self.set_important_consonants(config["num_important_consonants"])
 
     def is_kbbi_word(self, word):
@@ -63,8 +64,8 @@ class Katla:
                     if num_vocals > 2 and num_distinct_consonants > 1:
                         starters.append(word)
 
-        # Let's pick 5 at random since the total possibilites is around 70
-        return random.sample(starters, 5)
+        # Let's pick several best at random since there are many possibilities
+        return random.sample(starters, self.num_suggestions)
 
     # This is to give good suggestions on second to sixth guess
     def get_guesses(self, states):
@@ -79,15 +80,15 @@ class Katla:
                 if candidate.validify(word):
                     guesses.append(word)
 
-        # Let's pick the best 5 if there are more possibilities
-        if len(guesses) > 5:
-            guesses = self.pick_best_guesses(guesses, 5)
+        # Let's pick the several best if there are more possibilities
+        if len(guesses) > self.num_suggestions:
+            guesses = self.pick_best_guesses(guesses)
 
         return guesses
 
     # If there are many possible guesses, this function will pick the several best
     # TO DO: Can be refined with a better logic
-    def pick_best_guesses(self, guesses, num_guesses):
+    def pick_best_guesses(self, guesses):
         # Amongst all possible guesses, find the most common letter
         # for each position 1 to 5
         most_common_letters = []
@@ -100,7 +101,7 @@ class Katla:
 
             most_common_letters.append(Counter(pos_letters).most_common(1)[0])
 
-        # Now, pick 5 guesses that contain, as many as possible,
+        # Now, pick several guesses that contain, as many as possible,
         # the most common letters
         guesses_common_letter_count = []
 
@@ -117,7 +118,7 @@ class Katla:
 
         for tup in sorted(guesses_common_letter_count,
                           key=lambda x: x[1],
-                          reverse=True)[:num_guesses]:
+                          reverse=True)[:self.num_suggestions]:
             best_guesses.append(tup[0])
 
         return best_guesses
