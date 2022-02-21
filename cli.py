@@ -1,4 +1,3 @@
-import json
 from src.utils import clean, print_dashes
 from src.katla import Katla
 
