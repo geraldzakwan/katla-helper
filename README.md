@@ -24,4 +24,4 @@ by giving you 5 suggestions for each guess.
 
 - Run the CLI app
 
-  `python3 cmd.py`
+  `python3 cli.py`
