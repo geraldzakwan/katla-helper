@@ -6,7 +6,7 @@ from collections import Counter
 class Selection:
 
     def __init__(self, guesses, num_suggestions):
-        with open("solver/config.json", "r") as infile:
+        with open("src/config.json", "r") as infile:
             config = json.load(infile)
 
         self.guesses = guesses

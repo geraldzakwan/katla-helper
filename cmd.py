@@ -1,6 +1,6 @@
 import json
-from solver.utils import clean, print_dashes
-from solver.katla import Katla
+from src.utils import clean, print_dashes
+from src.katla import Katla
 
 
 def main():

@@ -23,7 +23,7 @@ class Candidate:
         if len(states) > 5:
             states = states[:5]
 
-        # See solver/state_example.json.
+        # See src/state_example.json.
         # The word to guess is "RAHIM" and the number of guess is 5.
         # State will contain all the guesses made so far.
         # Each element will show the guessed word and its verdict.
@@ -109,7 +109,7 @@ class Candidate:
 
 
 if __name__ == '__main__':
-    with open("solver/states_example.json", "r") as infile:
+    with open("src/states_example.json", "r") as infile:
         states = json.load(infile)
 
     candidate = Candidate(states)

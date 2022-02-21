@@ -1,15 +1,15 @@
 import json
 import random
 from collections import Counter
-from solver.utils import count_vocals, count_distinct_consonants, read_dictionary
-from solver.candidate import Candidate
-from solver.selection import Selection
+from src.utils import count_vocals, count_distinct_consonants, read_dictionary
+from src.candidate import Candidate
+from src.selection import Selection
 
 
 class Katla:
 
     def __init__(self):
-        with open("solver/config.json", "r") as infile:
+        with open("src/config.json", "r") as infile:
             config = json.load(infile)
 
         self.katla_dict = read_dictionary(config["katla_dict_filepath"])
