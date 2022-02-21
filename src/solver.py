@@ -1,26 +1,21 @@
 from abc import ABC, abstractmethod
+from src.utils import read_dictionary
 
 
 class Solver(ABC):
 
-    @property
-    @abstractmethod
-    def get_word_dict(self):
-        pass
-
-    @property
-    @abstractmethod
-    def get_historical_dict(self):
-        pass
+    def __init__(self, word_dict_filepath, hist_dict_filepath):
+        self.word_dict = read_dictionary(word_dict_filepath)
+        self.hist_dict = read_dictionary(hist_dict_filepath)
 
     def is_in_dictionary(self, word):
-        if word in self.get_word_dict():
+        if word in self.word_dict:
             return True
 
         return False
 
     def is_used_previously(self, word):
-        if word in self.get_historical_dict():
+        if word in self.hist_dict:
             return True
 
         return False

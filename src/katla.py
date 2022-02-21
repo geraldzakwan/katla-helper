@@ -1,7 +1,7 @@
 import json
 import random
 from collections import Counter
-from src.utils import count_vocals, count_distinct_consonants, read_dictionary
+from src.utils import count_vocals, count_distinct_consonants
 from src.candidate import Candidate
 from src.selection import Selection
 from src.solver import Solver
@@ -11,16 +11,13 @@ class Katla(Solver):
 
     def __init__(self):
         with open("src/config.json", "r") as infile:
-            self.config = json.load(infile)
+            config = json.load(infile)
 
-        self.num_suggestions = self.config["num_suggestions"]
-        self.set_important_consonants(self.config["num_important_consonants"])
+        super().__init__(config["word_dict_filepath"],
+                         config["katla_dict_filepath"])
 
-    def get_word_dict(self):
-        return read_dictionary(self.config["word_dict_filepath"])
-
-    def get_historical_dict(self):
-        return read_dictionary(self.config["katla_dict_filepath"])
+        self.num_suggestions = config["num_suggestions"]
+        self.set_important_consonants(config["num_important_consonants"])
 
     # Important consonants are derived from all Katla words so far
     # TO DO: Can be refined with a better logic
@@ -28,7 +25,7 @@ class Katla(Solver):
         vocals = set(["a", "i", "u", "e", "o"])
         letters = ""
 
-        for word in self.get_historical_dict():
+        for word in self.hist_dict:
             for letter in word:
                 if not letter in vocals:
                     letters += letter
@@ -43,7 +40,7 @@ class Katla(Solver):
     def get_starters(self):
         starters = []
 
-        for word in self.get_word_dict():
+        for word in self.word_dict:
             # Exclude word that has been used
             if not self.is_used_previously(word):
                 # Exclude word that has repeatable character(s)
@@ -65,7 +62,7 @@ class Katla(Solver):
         candidate = Candidate(states)
         guesses = []
 
-        for word in self.get_word_dict():
+        for word in self.word_dict:
             # Exclude word that has been used
             if not self.is_used_previously(word):
                 # Add as suggestion if it's a valid word that complies with
