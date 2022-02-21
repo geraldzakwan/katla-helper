@@ -27,7 +27,7 @@ def main():
                 input("Ketik kata yang ingin kamu masukkan ke Katla: "))
 
             if len(guess) == 5:
-                if katla.is_kbbi_word(guess):
+                if katla.is_in_dictionary(guess):
                     is_guess_valid = True
                     print_dashes(50)
                 else:
