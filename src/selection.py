@@ -26,23 +26,25 @@ class Selection:
 
             most_common_letters.append(Counter(pos_letters).most_common(1)[0])
 
-        # Now, pick several guesses that contain, as many as possible,
-        # the most common letters
-        guesses_common_letter_count = []
+        # Now, pick several guesses that:
+        # - Contain, as many as possible, the most common letters
+        # - Consist of, as many as possible, distinct letters
+        guesses_quality = []
 
         for guess in self.guesses:
+            distinct_letter_count = len(set(guess))
             common_letter_count = 0
 
             for i in range(0, 5):
                 if guess[i] == most_common_letters[i][0]:
                     common_letter_count += 1
 
-            guesses_common_letter_count.append((guess, common_letter_count))
+            guesses_quality.append(
+                (guess, common_letter_count + distinct_letter_count))
 
         best_guesses = []
 
-        for tup in sorted(guesses_common_letter_count,
-                          key=lambda x: x[1],
+        for tup in sorted(guesses_quality, key=lambda x: x[1],
                           reverse=True)[:self.num_suggestions]:
             best_guesses.append(tup[0])
 
