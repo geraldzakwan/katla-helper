@@ -1,6 +1,8 @@
 {
+  "english_dict_filepath": "dictionary/wordle/2022-03-21.txt",
+  "indonesian_dict_filepath": "dictionary/katla/2022-03-21.txt",
+  "wordle_dict_filepath": "dictionary/wordle/used_words.txt",
   "katla_dict_filepath": "dictionary/katla/used_words.txt",
-  "word_dict_filepath": "dictionary/katla/2022-03-21.txt",
   "num_important_consonants": 3,
   "num_suggestions": 5
 }

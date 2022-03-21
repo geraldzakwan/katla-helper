@@ -13,7 +13,7 @@ class Katla(Solver):
         with open("src/config.json", "r") as infile:
             config = json.load(infile)
 
-        super().__init__(config["word_dict_filepath"],
+        super().__init__(config["indonesian_dict_filepath"],
                          config["katla_dict_filepath"])
 
         self.num_suggestions = config["num_suggestions"]
