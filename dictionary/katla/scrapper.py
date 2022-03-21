@@ -27,7 +27,7 @@ def main():
                     if len(word) == 5:
                         five_letter_words.append(word)
 
-        if (page_idx % 10 == 0) or ((page_idx + 1) == 106):
+        if (page_idx % 10 == 0) or (page_idx == 106):
             print("Processed pages: {} out of {}".format(page_idx, 106))
             print("Time elapsed: {} seconds".format(time.time() - start_time))
 
