@@ -1,9 +1,31 @@
 from src.utils import clean, print_dashes
 from src.katla import Katla
+from src.wordle import Wordle
 
 
 def main():
-    katla = Katla()
+    print_dashes(50)
+    print("List of games:")
+    print("1. Katla")
+    print("2. Wordle")
+
+    is_choice_valid = False
+
+    while not is_choice_valid:
+        game = input("Choose your game (1 or 2): ")
+
+        if game == "1":
+            solver = Katla()
+            is_choice_valid = True
+        elif game == "2":
+            solver = Wordle()
+            is_choice_valid = True
+        else:
+            print("Please type 1 or 2")
+            print_dashes(50)
+
+    print_dashes(50)
+
     states = []
 
     turn = 0
@@ -16,7 +38,7 @@ def main():
 
         if turn == 0:
             print("Ini beberapa kata bagus sebagai pemulai:")
-            print(katla.get_starters())
+            print(solver.get_starters())
             print_dashes(50)
 
         is_guess_valid = False
@@ -26,7 +48,7 @@ def main():
                 input("Ketik kata yang ingin kamu masukkan ke Katla: "))
 
             if len(guess) == 5:
-                if katla.is_in_dictionary(guess):
+                if solver.is_in_dictionary(guess):
                     is_guess_valid = True
                     print_dashes(50)
                 else:
@@ -88,11 +110,13 @@ def main():
             finish = True
         else:
             states.append({"word": guess, "verdict": verdict})
-            guesses = katla.get_guesses(states)
+            guesses = solver.get_guesses(states)
 
             if len(guesses) > 0:
                 if len(guesses) == 1:
                     print("Jawabannya pasti \"{}\"!".format(guesses[0]))
+
+                    finish = True
                 else:
                     print(
                         "Berikut beberapa rekomendasi untuk tebakan selanjutnya:"
